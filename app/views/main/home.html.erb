@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<nav>
+  <div class="nav-wrapper blue darken-3">
+    <a href="#" class="brand-logo">Chợ Tech</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">Chợ Tech</a></li>
+      <li><a href="#">Tin mới</a></li>
+      <li><a href="#">Hỗ trợ</a></li>
+      <li><a href="#">Đăng nhập</a></li>
+      <li><a href="#">Đăng ký</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col m2">
+    <div class="card center">
+      <p>Danh mục sản phẩm</p>
+      <div class="card-content">
+        <div class="collection">
+          <% @categories.each do |category| %>
+          <%= link_to category.name, category, :class => 'collection-item' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col m8">
+    <div class="card">
+      <p>Các khu vực bán hàng</p>
+
+      <div class="row">
+        <% @categories.each do |category| %>
+        <div class="col m6">
+          <div class="grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col m2">
+                <i class=" medium material-icons"><%= category.image_url %></i>
+              </div>
+              <div class="col m10">
+                <div class="row">
+                  <b><%= category.name %></b>
+                </div>
+                <div class="row"><%= category.description %></div>
+                <div class="row">
+                  <div class="col m6">Chủ đề : <%= Topic.where("category_id = ?" , category.id).count %>
+                  </div>
+                  <div class="col m6">Bài viết</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col m2">
+    <div class="card center">
+      <p>Thông tin nổi bật</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col m2">
+    <div class="card">
+      <div class="card-content">
+        <p>Cộng đồng Chợ Tech</p>
+        <p>Chủ đề</p>
+        <p>Bài viết</p>
+        <p>Thành viên</p>
+        <p>Thành viên mới nhất</p>
+      </div>
+    </div>
+  </div>
+  <div class="col m8">
+    <div class="card">
+      <p>Thông tin hữu ích</p>
+      <div class="row">
+        <% @traders.each do |trader| %>
+        <div class="col m6">
+          <div class="grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col m2">
+                <i class=" medium material-icons"><%= trader.image_url %></i>
+              </div>
+              <div class="col m10">
+                <div class="row">
+                  <b><%= trader.name %></b>
+                </div>
+                <div class="row">
+                  <div class="col m6">Chủ đề : <%= Topic.where("category_id = ?" , trader.id).count %>
+                  </div>
+                  <div class="col m6">Bài viết</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

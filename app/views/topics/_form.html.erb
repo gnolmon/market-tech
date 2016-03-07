@@ -1,0 +1,53 @@
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_post %><br>
+    <%= f.text_field :type_post %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp %><br>
+    <%= f.text_field :timestamp %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

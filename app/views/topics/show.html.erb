@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @topic.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @topic.category_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @topic.location_id %>
+</p>
+
+<p>
+  <strong>Type post:</strong>
+  <%= @topic.type_post %>
+</p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @topic.timestamp %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @topic.content %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @topic.price %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @topic.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

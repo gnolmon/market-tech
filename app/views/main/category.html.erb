@@ -1,0 +1,12 @@
+<h5>Danh mục sản phẩm</h5>
+<p id="notice"><%= notice %></p>
+<div class="card left">
+  <div class="card-content">
+  <div class="collection">
+      <% @categories.each do |category| %>
+      <%= link_to category.name, category, :class => 'collection-item' %>
+      <% end %>
+    </div>
+
+<%= render "main/shared/links" %>
+

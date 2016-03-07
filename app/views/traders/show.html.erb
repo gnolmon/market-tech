@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trader.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @trader.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @trader.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_trader_path(@trader) %> |
+<%= link_to 'Back', traders_path %>
