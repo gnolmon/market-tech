@@ -5,6 +5,9 @@ machine:
 
   environment:
     CIRCLE_ENV: test
+dependencies:
+  post:
+    - bundle exec rake assets:precompile
 test:
   post:
-    - bundle exec rubocop
+    - bundle exec rake test:custom
