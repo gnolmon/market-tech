@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225175130) do
+ActiveRecord::Schema.define(version: 20160308081436) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20160225175130) do
     t.string   "description"
     t.string   "image_url"
     t.string   "postcode"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "mobiles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "image_url"
+    t.string   "type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -54,8 +63,13 @@ ActiveRecord::Schema.define(version: 20160225175130) do
     t.string   "content"
     t.float    "price"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "num_respond"
+    t.integer  "num_view"
+    t.string   "last_timestamp"
+    t.string   "last_user"
+    t.string   "tag"
   end
 
   create_table "traders", force: :cascade do |t|

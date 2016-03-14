@@ -4,30 +4,15 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<nav>
-  <div class="nav-wrapper blue darken-3">
-    <a href="#" class="brand-logo">Chợ Tech</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#">Chợ Tech</a></li>
-      <li><a href="#">Tin mới</a></li>
-      <li><a href="#">Hỗ trợ</a></li>
-      <li><a href="#">Đăng nhập</a></li>
-      <li><a href="#">Đăng ký</a></li>
-    </ul>
-  </div>
-</nav>
-
 <div class="row">
   <div class="col m2">
-    <div class="card center">
-      <p>Danh mục sản phẩm</p>
-      <div class="card-content">
-        <div class="collection">
+    <div class="card">
+        <div class="collection with-header">
+        <div class="collection-header"><b>Danh mục sản phẩm</b></div>
           <% @categories.each do |category| %>
-          <%= link_to category.name, category, :class => 'collection-item' %>
+          <a href="" class="collection-item"><%= category.name %><span class="badge"><%= Topic.where("category_id = ?" , category.id).count %></span></a>
           <% end %>
         </div>
-      </div>
     </div>
   </div>
 
@@ -105,7 +90,6 @@
           </div>
         </div>
         <% end %>
-
       </div>
     </div>
   </div>

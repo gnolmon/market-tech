@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'mobile_post/mobile'
+
+  resources :mobiles
   resources :categories
   resources :traders
   resources :topics
