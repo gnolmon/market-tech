@@ -2,3 +2,9 @@ machine:
   ruby:
     version:
       2.2.3
+dependencies:
+  post:
+    - bundle exec rake assets:precompile
+database:
+  pre:
+    - mv config/database.yml.ci config/database.yml
