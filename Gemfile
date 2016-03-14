@@ -34,7 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# comment rubocop directly on pull request
 gem 'saddler'
 gem 'saddler-reporter-github'
 gem 'rubocop-checkstyle_formatter'
@@ -44,7 +43,7 @@ group :development, :test do
   gem 'byebug'
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'pg'
 
   gem 'spring'
 
