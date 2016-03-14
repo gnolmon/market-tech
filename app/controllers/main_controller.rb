@@ -32,6 +32,6 @@ class MainController < ApplicationController
   end
 
   def category
-
+    @categories = Category.all
   end
 end
