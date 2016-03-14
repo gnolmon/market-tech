@@ -4,10 +4,10 @@ machine:
       2.2.3
 
   environment:
-    CIRCLE_ENV: test
+    CIRCLE_ENV: production
 dependencies:
   post:
     - bundle exec rake assets:precompile
-test:
+production:
   post:
-    - bundle exec rake test:custom
+    - bundle exec rake production:custom
