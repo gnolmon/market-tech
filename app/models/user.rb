@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :topics
+
+  def role_enum
+    ["super admin", "publisher", "member"]
+  end
 end
